@@ -17,9 +17,9 @@ def return_product(arr):
     for i, a in enumerate(arr):
         new_list = arr.copy()
         del new_list[i]
-        print(new_list)
         container.append(reduce(lambda x, y: x*y, new_list))
     return container
 
 
-print(return_product([1,2,3,4,5,1,2]))
+assert return_product([1, 2, 3, 4, 5]) == [120, 60, 40, 30, 24]
+assert return_product([3, 2, 1]) == [2, 3, 6]
