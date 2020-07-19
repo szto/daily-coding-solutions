@@ -9,3 +9,16 @@ For example, [2, 4, 6, 2, 5] should return 13, since we pick 2, 6, and 5. [5, 1,
 
 Follow-up: Can you do this in O(N) time and constant space?
 """
+from functools import reduce
+
+def non_ajacent(arr):
+
+    pre, lar = 0, 0
+    for am in arr:
+        pre, lar = lar, max(lar, am+pre)
+    return lar
+
+
+assert non_ajacent([2, 4, 6, 2, 5]) == 13
+assert non_ajacent([5, 1, 1, 5]) == 10
+
